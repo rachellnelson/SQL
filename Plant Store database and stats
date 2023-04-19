@@ -1,0 +1,15 @@
+--Create a store datebase 
+
+CREATE TABLE plant_store (id INTEGER PRIMARY KEY, plant TEXT, color TEXT, price INTEGER, sold INTEGER); 
+
+INSERT INTO plant_store VALUES (1, "ivy", "green",10, 0);
+INSERT INTO plant_store VALUES (2, "snake plant", "stipes",8,5);
+INSERT INTO plant_store VALUES (3, "rose bush", "red", 11,6);
+INSERT INTO plant_store VALUES (4, "pink princess", "pink", 15, 3);
+INSERT INTO plant_store VALUES (5, "cactus", "white", 5,1);
+
+--display the database ordered by price.
+SELECT * FROM plant_store ORDER BY price;
+
+--display by quanity of plants sold and order by price 
+SELECT price, SUM(sold) FROM plant_store GROUP BY price;
